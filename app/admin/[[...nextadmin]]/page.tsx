@@ -1,11 +1,8 @@
 import { NextAdmin } from "@premieroctet/next-admin"
-import { getPropsFromParams } from "@premieroctet/next-admin/dist/appHandler"
+import { getNextAdminProps } from "@premieroctet/next-admin/appHandler"
 import { requireAdmin } from "@/lib/auth"
-import schema from "@/prisma/schema.prisma"
-import { PrismaClient } from "@prisma/client"
+import { prisma } from "@/lib/prisma"
 import { options } from "./options"
-
-const prisma = new PrismaClient()
 
 export default async function AdminPage({
   params,
@@ -15,14 +12,15 @@ export default async function AdminPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
   await requireAdmin()
-  const props = await getPropsFromParams({
-    params: await params,
-    searchParams: await searchParams,
+  
+  const props = await getNextAdminProps({
+    params: params,
+    searchParams: searchParams,
     options,
     prisma,
-    schema,
   })
 
-  return <NextAdmin {...props} options={options} />
+  return <NextAdmin {...props} />
 }
+
 
