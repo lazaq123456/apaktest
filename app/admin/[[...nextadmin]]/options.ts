@@ -14,7 +14,6 @@ export const options: NextAdminOptions = {
         display: ["email", "name", "role"],
         fields: {
           password: {
-            type: "string",
             format: "password",
             helperText: "Pozostaw puste, aby nie zmieniać hasła",
           },
@@ -31,11 +30,9 @@ export const options: NextAdminOptions = {
         display: ["name", "description", "price", "stock"],
         fields: {
           price: {
-            type: "number",
             helperText: "Cena w PLN",
           },
           stock: {
-            type: "number",
             helperText: "Ilość na stanie",
           },
         },
