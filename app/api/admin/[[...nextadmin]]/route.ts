@@ -1,13 +1,12 @@
-import { NextAdmin } from "@premieroctet/next-admin"
+import { createHandler } from "@premieroctet/next-admin/appHandler"
 import { prisma } from "@/lib/prisma"
 import { options } from "@/app/admin/[[...nextadmin]]/options"
 
-const { run } = NextAdmin({
+const { run } = createHandler({
   apiBasePath: "/api/admin",
   prisma,
-  schema: options.model,
   options,
 })
 
-export { run as DELETE, run as GET, run as POST }
+export { run as GET, run as POST, run as DELETE }
 
