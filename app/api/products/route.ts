@@ -11,7 +11,7 @@ export async function GET() {
     })
 
     return NextResponse.json(products)
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Błąd podczas pobierania produktów" },
       { status: 500 }
@@ -50,11 +50,12 @@ export async function POST(request: Request) {
     })
 
     return NextResponse.json(product, { status: 201 })
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Błąd podczas tworzenia produktu" },
       { status: 500 }
     )
   }
 }
+
 

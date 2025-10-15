@@ -32,7 +32,7 @@ export default function SignInPage() {
         router.push(callbackUrl)
         router.refresh()
       }
-    } catch (error) {
+    } catch {
       setError("Wystąpił błąd podczas logowania")
     } finally {
       setLoading(false)
@@ -113,4 +113,5 @@ export default function SignInPage() {
     </div>
   )
 }
+
 

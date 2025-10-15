@@ -20,7 +20,7 @@ export async function GET(
     }
 
     return NextResponse.json(product)
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Błąd podczas pobierania produktu" },
       { status: 500 }
@@ -57,7 +57,7 @@ export async function PUT(
     })
 
     return NextResponse.json(product)
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Błąd podczas aktualizacji produktu" },
       { status: 500 }
@@ -85,11 +85,12 @@ export async function DELETE(
     })
 
     return NextResponse.json({ message: "Produkt usunięty" })
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: "Błąd podczas usuwania produktu" },
       { status: 500 }
     )
   }
 }
+
 

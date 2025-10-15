@@ -10,9 +10,10 @@ export async function middleware(request: NextRequest) {
   const publicPaths = ["/auth/signin", "/auth/signup"]
   const isPublicPath = publicPaths.some((path) => pathname.startsWith(path))
   const isAuthAPI = pathname.startsWith("/api/auth")
+  const isAdminAPI = pathname.startsWith("/api/admin")
 
-  // Jeśli to ścieżka publiczna lub API auth, pozwól
-  if (isPublicPath || isAuthAPI) {
+  // Jeśli to ścieżka publiczna lub API auth/admin, pozwól
+  if (isPublicPath || isAuthAPI || isAdminAPI) {
     return NextResponse.next()
   }
 
@@ -45,4 +46,5 @@ export const config = {
     "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 }
+
 

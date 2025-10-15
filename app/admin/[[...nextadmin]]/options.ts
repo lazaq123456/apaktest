@@ -12,7 +12,6 @@ export const options: NextAdminOptions = {
         filters: [
           {
             name: "role",
-            label: "Rola",
           },
         ],
       },
@@ -49,4 +48,5 @@ export const options: NextAdminOptions = {
     },
   },
 }
+
 

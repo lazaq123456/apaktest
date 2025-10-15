@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma"
 import { compare } from "bcryptjs"
 import type { User as PrismaUser } from "@prisma/client"
 
+export const runtime = "nodejs"
+
 declare module "next-auth" {
   interface Session {
     user: {
@@ -86,4 +88,5 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
   },
 })
+
 

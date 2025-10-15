@@ -82,3 +82,4 @@ model Product {
   @@map("products")
 }
 
+
