@@ -1,8 +1,6 @@
 import { NextAdminOptions } from "@premieroctet/next-admin"
 
 export const options: NextAdminOptions = {
-  basePath: "/admin",
-  title: "Panel Administracyjny",
   model: {
     User: {
       toString: (user) => `${user.email}`,
@@ -12,12 +10,6 @@ export const options: NextAdminOptions = {
       },
       edit: {
         display: ["email", "name", "role"],
-        fields: {
-          password: {
-            format: "password",
-            helperText: "Pozostaw puste, aby nie zmieniać hasła",
-          },
-        },
       },
     },
     Product: {
@@ -28,14 +20,6 @@ export const options: NextAdminOptions = {
       },
       edit: {
         display: ["name", "description", "price", "stock"],
-        fields: {
-          price: {
-            helperText: "Cena w PLN",
-          },
-          stock: {
-            helperText: "Ilość na stanie",
-          },
-        },
       },
     },
   },
