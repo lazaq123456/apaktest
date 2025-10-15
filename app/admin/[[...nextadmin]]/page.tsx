@@ -1,5 +1,4 @@
 import { NextAdmin } from "@premieroctet/next-admin"
-import { submitFormAction } from "@premieroctet/next-admin/actions"
 import { requireAdmin } from "@/lib/auth"
 import { prisma } from "@/lib/prisma"
 import { options } from "./options"
@@ -24,7 +23,6 @@ export default async function AdminPage({
       prisma={prisma}
       schema={options.model}
       options={options}
-      submitFormAction={submitFormAction}
       searchParams={resolvedSearchParams}
       params={resolvedParams}
     />
