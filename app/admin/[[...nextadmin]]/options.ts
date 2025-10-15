@@ -9,11 +9,6 @@ export const options: NextAdminOptions = {
       list: {
         display: ["email", "name", "role", "createdAt"],
         search: ["email", "name"],
-        filters: [
-          {
-            name: "role",
-          },
-        ],
       },
       edit: {
         display: ["email", "name", "role"],
